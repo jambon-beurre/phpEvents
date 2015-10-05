@@ -2,7 +2,7 @@
 
 include ("Begin.php");
 
-echo 'Page d\'accueuil !';
+echo 'Page d\'accueil !';
 
 include ("End.php");
 
