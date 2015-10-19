@@ -52,16 +52,5 @@ function isConnected(){
 	<header>
 		<a href="index.php">Accueil</a>
 		<a href="events.php">Evenements</a>
-
-		<?php
-	
-		if (isConnected()){
-			echo '<a href="connexion.php">Profil</a>';
-		}
-		else{
-			echo '<a href="connexion.php">Connexion</a>';
-		}
-
-		?>
-
+		<?php echo (isConnected()?'<a href="profil.php">Profil</a>':'<a href="connexion.php">Connexion</a>');?>
 	</header>
