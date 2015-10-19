@@ -34,6 +34,8 @@ function Connect_db(){
 	<header>
 		<a href="index.php">Accueil</a>
 		<a href="events.php">Evenements</a>
+		<a href="connexion.php">Connexion</a>
+		<!--
 		<?php
 
 		$connected = false;
@@ -52,7 +54,7 @@ function Connect_db(){
 				}
 			}
 		}
-
+	
 		if ($connected){
 			echo '<a href="profil.php">Profil</a>';
 		}
@@ -61,5 +63,5 @@ function Connect_db(){
 		}
 
 		?>
-		
+		-->
 	</header>
