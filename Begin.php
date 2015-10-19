@@ -15,6 +15,24 @@ function Connect_db(){
 	}
 }
 
+function isConnected(){
+	if (isset($_COOKIE['email']) && isset($_COOKIE['pwd']))
+	{			
+		$bdd = Connect_db();
+		$query = $bdd->prepare('SELECT email, password FROM Membre');
+		$query->execute(); 
+		while ($line = $query->fetch())
+		{
+			if ($line['email'] == $_COOKIE['email'] 
+				&& $line['password'] == $_COOKIE['pwd'])
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 
 
 ?>
@@ -34,34 +52,16 @@ function Connect_db(){
 	<header>
 		<a href="index.php">Accueil</a>
 		<a href="events.php">Evenements</a>
-		<a href="connexion.php">Connexion</a>
-		<!--
-		<?php
 
-		$connected = false;
-		
-		if (isset($_GET['email']) && isset($_GET['password']))
-		{			
-			$bdd = Connect_db();
-			$query = $bdd->prepare('SELECT email, password FROM Membre');
-			$query->execute(); 
-			while ($line = $query->fetch()) //Si il l'est déja, on modifie
-			{
-				if ($line['email'] == $_GET['email'] && $line['password'] == $_GET['password'])
-				{
-					$connected = true;
-					break;
-				}
-			}
-		}
+		<?php
 	
-		if ($connected){
-			echo '<a href="profil.php">Profil</a>';
+		if (isConnected()){
+			echo '<a href="connexion.php">Profil</a>';
 		}
 		else{
 			echo '<a href="connexion.php">Connexion</a>';
 		}
 
 		?>
-		-->
+
 	</header>
