@@ -17,11 +17,18 @@
 	else {
 		if (isset($_COOKIE['email']) && isset($_COOKIE['pwd']))
 			echo "Vos identifiants de connexion sont erronés, veuillez réessayer.";
-		echo 	'<form action ="connexion.php" method="post">
-			<p>Adresse mail : <input type="email" name="email"/></p>
-			<p>Mot de passe : <input type="password" name="pwd"/></p>
-			<button type="submit" value="Calculer">Connexion</button>
-		</form>';
+			?>
+
+			<form action ="connexion.php" method="post">
+				<p>Adresse mail : <input type="email" name="email"/></p>
+				<p>Mot de passe : <input type="password" name="pwd"/></p>
+				<button type="submit" value="Calculer">Connexion</button>
+			</form>
+			<form>
+				<input type="button" value="Inscription" onClick="parent.location='inscription.php'">
+			</form>
+
+			<?php 
 	}
 	include ("End.php");
 

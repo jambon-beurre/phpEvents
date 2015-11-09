@@ -21,7 +21,9 @@
 				$pwd = $_POST['pwd1'];
 				$query = $bdd->prepare('insert into Membre values(\''.$email.'\',\''.$pwd.'\')');
 				$query->execute();
-				echo("Merci de votre inscription!");
+				echo("Vous êtes inscrit!");
+				setcookie("email",$email,time()+10000);
+				setcookie("pwd",$pwd,time()+10000);
 			}
 		}
 
