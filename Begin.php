@@ -43,14 +43,15 @@ function isConnected(){
 <head>
 	<title>php Events</title>
 	<meta charset="utf-8"/>
-
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
 
 	<header>
-		<a href="index.php">Accueil</a>
-		<a href="events.php">Evenements</a>
-		<?php echo (isConnected()?'<a href="profil.php">Profil</a>':'<a href="connexion.php">Connexion</a>');?>
+		<a href="index.php" id="accueil">Accueil</a>
+		<div id="header_right">
+		<?php echo (isConnected()?'<a href="profil.php">Profil</a> <a href="deconnexion.php">Déconnexion</a>':'<a href="connexion.php" class="header_right">Connexion</a>');?>
+		</div>
 	</header>

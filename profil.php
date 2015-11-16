@@ -6,7 +6,6 @@
 			echo 'Vous êtes connecté en tant que : '. $_COOKIE['email'] . '<br/>';
 			?>
 
-			<a href="deconnexion.php">Déconnexion</a>
 			<p>Changer de mot de passe</p>
 			<form action="change_mdp.php" method="post">
 				<p>Nouveau mot de passe : <input type = "password" name = "pwd1"></p>

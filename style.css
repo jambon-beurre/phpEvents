@@ -1,0 +1,33 @@
+body, html{
+	font-family: 'Open sans', sans-serif;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header{
+	background-color: blue;
+}
+
+header a{
+	text-decoration : none;
+	font-size : 3em;
+	color: white;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+header a:hover{
+	background-color: lightblue;
+}
+
+#accueil{
+	width: 30%;
+	display: inline-block;
+}
+
+#header_right{
+	text-align: right;
+	width: 66%;
+	display: inline-block;
+}
