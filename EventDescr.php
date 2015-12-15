@@ -9,7 +9,7 @@
 		$SQL_Query = 'SELECT idEvent FROM Event WHERE idEvent = ' . intval($_GET["idEvent"]);
 		
 		$query = $bdd->prepare($SQL_Query);
-		$query->execute(); 
+		$query->execute();
 		if (!($line = $query->fetch()))
 			header('location:events.php');
 	}
@@ -20,7 +20,7 @@
 	<h1>Description de l'évenement</h1>
 
 <?php
-	
+
 	$SQL_Query = '	SELECT idEvent, Event.Nom eNom, Type.Nom tNom, Lieu 
 					FROM Event JOIN Type ON Event.idType = Type.idType
 					WHERE idEvent = ' . intval($_GET["idEvent"]);

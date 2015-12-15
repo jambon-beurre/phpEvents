@@ -16,7 +16,7 @@
 	}//Non connecté
 	else {
 		if (isset($_COOKIE['email']) && isset($_COOKIE['pwd']))
-			echo "Vos identifiants de connexion sont erronés, veuillez réessayer.";
+			echo "<p class = \"err\">Vos identifiants de connexion sont erronés, veuillez réessayer.</p>";
 			?>
 
 			<form action ="connexion.php" method="post">

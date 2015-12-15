@@ -13,21 +13,50 @@ header a{
 	text-decoration : none;
 	font-size : 3em;
 	color: white;
-	margin-left: 0.5em;
-	margin-right: 0.5em;
+	padding-left: 1%;
+	padding-right: 1%;
+	transition: 0.2s;
+	margin: 0;
+}
+
+body{
+	text-align: center;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td{
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-right: 1.5em;
+	padding-left: 1.5em;
+}
+
+td a{
+	text-decoration : none;
+	color : blue;
+	font-weight: bold;
 }
 
 header a:hover{
-	background-color: lightblue;
+	background-color: white;
+	color: black;
 }
 
 #accueil{
-	width: 30%;
+	width: 13%;
 	display: inline-block;
 }
 
 #header_right{
 	text-align: right;
-	width: 66%;
+	width: 84.7%;
 	display: inline-block;
+}
+
+.err{
+	color: red;
 }

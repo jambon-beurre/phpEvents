@@ -15,10 +15,10 @@
 
 			<?php
 			if(isset($_GET['pwderr'])){
-				echo '<p>Les deux champs ne correspondent pas</p>';
+				echo '<p id="err">Les deux champs ne correspondent pas</p>';
 			}
 			if(isset($_GET['err'])){
-				echo '<p>Remplir les deux champs</p>';
+				echo '<p id="err">Remplir les deux champs</p>';
 			}
 	}//Non connecté
 	else {
