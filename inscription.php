@@ -17,13 +17,13 @@
 
 	<?php 
 		if(isset($_GET['err'])){
-			echo ("<p id=\"erreur\">Veuillez remplir tous les champs</p>");
+			echo ("<p class=\"err\">Veuillez remplir tous les champs</p>");
 		}
 		else if(isset($_GET['emailerr'])){
-			echo ("<p id=\"erreur\">Il y a déjà un compte enregistré à cette adresse mail</p>");
+			echo ("<p class=\"err\">Il y a déjà un compte enregistré à cette adresse mail</p>");
 		}
 		else if(isset($_GET['pwderr'])){
-			echo ("<p id=\"erreur\">Les mots de passe ne correspondent pas</p>");
+			echo ("<p class=\"err\">Les mots de passe ne correspondent pas</p>");
 		}
 	?>
 

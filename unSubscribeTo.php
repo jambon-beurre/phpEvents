@@ -3,13 +3,11 @@
 	include ("Begin.php");
 	
 	$bdd = Connect_db();
-
-	//TODO check connected, notInscripted
 	
 	if (isConnected() && isset($_GET["idEvent"]))
 	{
-		$SQL_Query = 'INSERT INTO Membre_Inscrit_Event (Membre_email, Event_Id, Date)
-					VALUES ("'.$_COOKIE['email'].'",'.intval($_GET["idEvent"]).', NOW())';
+		$SQL_Query = 'DELETE FROM Membre_Inscrit_Event
+					WHERE Membre_email = "'.$_COOKIE['email'].'" AND Event_Id = '.intval($_GET["idEvent"]);
 		
 		$query = $bdd->prepare($SQL_Query);
 		$query->execute(); 
@@ -18,4 +16,7 @@
 	}
 	else
 		echo '<script>alert(\'Nique ta mère\');</script>';
+
+	
+
 ?>

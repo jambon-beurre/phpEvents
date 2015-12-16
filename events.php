@@ -30,6 +30,7 @@
 		   <option value="1" <?php if (isset($_POST['Order']) && $_POST['Order'] == 1) echo 'selected'; ?> >Nom</option>
 		   <option value="2" <?php if (isset($_POST['Order']) && $_POST['Order'] == 2) echo 'selected'; ?> >Type</option>
 		   <option value="3" <?php if (isset($_POST['Order']) && $_POST['Order'] == 3) echo 'selected'; ?> >Lieu</option>
+		   <option value="4" <?php if (isset($_POST['Order']) && $_POST['Order'] == 4) echo 'selected'; ?> >Date</option>
        </select>
 	   <button type="submit">Filtrer</button>
 	</form>
@@ -37,14 +38,14 @@
 	<table>
 		<thead> 
 			<tr>
-				<th>Id</th><th>Nom</th><th>Type</th><th>Lieu</th> 
+				<th>Id</th><th>Nom</th><th>Type</th><th>Lieu</th><th>Date</th>
 			</tr>
 		</thead>
 		<tbody>
 	
 <?php
 	
-	$SQL_Query = '	SELECT idEvent, Event.Nom eNom, Type.Nom tNom, Lieu 
+	$SQL_Query = '	SELECT idEvent, Event.Nom eNom, Type.Nom tNom, Lieu, DATE_FORMAT(date,"%d - %m - %Y") AS date  
 					FROM Event JOIN Type ON Event.idType = Type.idType ';
 	
 	if (isset($_POST['Type']) && $_POST['Type'] != 0)
@@ -58,13 +59,15 @@
 		$SQL_Query .= 'ORDER BY tNom';
 	else if (isset($_POST['Order']) && $_POST['Order'] == 3)
 		$SQL_Query .= 'ORDER BY Lieu';
+	else if (isset($_POST['Order']) && $_POST['Order'] == 4)
+		$SQL_Query .= 'ORDER BY date';
 	 
 	$query = $bdd->prepare($SQL_Query);
 	$query->execute(); 
 	while ($line = $query->fetch())
 	{
 		echo'<tr>
-				<td>'.$line['idEvent'].'</td><td><a href="EventDescr.php?idEvent='.$line['idEvent'].'">'.$line['eNom'].'</a></td><td>'.$line['tNom'].'</td><td>'.$line['Lieu'].'</td> 
+				<td>'.$line['idEvent'].'</td><td><a href="EventDescr.php?idEvent='.$line['idEvent'].'">'.$line['eNom'].'</a></td><td>'.$line['tNom'].'</td><td>'.$line['Lieu'].'</td><td>'.$line['date'].'</td>  
 			</tr>
 			';
 	}

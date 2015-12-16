@@ -1,12 +1,11 @@
 <?php
-
 	include ("Begin.php");
 
-	if(isConnected()){
-			echo 'Vous êtes connecté en tant que : '. $_COOKIE['email'] . '<br/>';
-			?>
+	if(isConnected()){?>
+			<br/>
+			Vous êtes connecté en tant que : <?php echo $_COOKIE['email']?><br/>
 
-			<p>Changer de mot de passe</p>
+			<h2>Changer de mot de passe</h2>
 			<form action="change_mdp.php" method="post">
 				<p>Nouveau mot de passe : <input type = "password" name = "pwd1"></p>
 				<p>Confirmer mot de passe : <input type = "password" name = "pwd2"></p>
@@ -15,10 +14,10 @@
 
 			<?php
 			if(isset($_GET['pwderr'])){
-				echo '<p id="err">Les deux champs ne correspondent pas</p>';
+				echo '<p>Les deux champs ne correspondent pas</p>';
 			}
 			if(isset($_GET['err'])){
-				echo '<p id="err">Remplir les deux champs</p>';
+				echo '<p>Remplir les deux champs</p>';
 			}
 	}//Non connecté
 	else {
@@ -26,5 +25,4 @@
 		exit();
 	}
 	include ("End.php");
-
 ?>

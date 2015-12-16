@@ -59,4 +59,9 @@ header a:hover{
 
 .err{
 	color: red;
+	transition: 0.2s;
+}
+
+input{
+	margin:10px;
 }
