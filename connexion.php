@@ -22,7 +22,7 @@
 			<form action ="connexion.php" method="post">
 				<p>Adresse mail : <input type="email" name="email"/></p>
 				<p>Mot de passe : <input type="password" name="pwd"/></p>
-				<button type="submit" value="Connexion">Connexion</button><input type="button" value="Inscription" onClick="parent.location='inscription.php'">
+				<button type="submit" value="Connexion">Connexion</button><input type="button" value="Enregistrement" onClick="parent.location='inscription.php'">
 			</form>
 
 			<?php 

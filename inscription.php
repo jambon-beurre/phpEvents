@@ -27,7 +27,7 @@
 		}
 	?>
 
-	<button type = "submit">S'inscrire</button>
+	<button type="submit">S'enregistrer</button>
 </form>
 
 <?php
