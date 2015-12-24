@@ -15,13 +15,8 @@
 	}
 	else
 		header('location:events.php');
-?>
-
-	<h1>Description de l'évenement</h1>
-
-<?php
 	
-	$SQL_Query = '	SELECT idEvent, Event.Nom eNom, Type.Nom tNom, Lieu 
+	$SQL_Query = '	SELECT idEvent, Event.Nom eNom, Type.Nom tNom, Lieu, Event.Description
 					FROM Event JOIN Type ON Event.idType = Type.idType
 					WHERE idEvent = ' . intval($_GET["idEvent"]);
 	 
@@ -29,8 +24,10 @@
 	$query->execute(); 
 	while ($line = $query->fetch())
 	{
-		echo 'Id : '.$line['idEvent'].'<br/>
-		Nom : '.$line['eNom'].'<br/>
+		echo '<h1>'.$line['eNom'].'</h1>';
+		if (file_exists('EventPics/'.$line['idEvent'].'.jpg'))
+			echo '<img src="EventPics/'.$line['idEvent'].'.jpg"/>';
+		echo '<p>'.$line['Description'].'</p>
 		Type : '.$line['tNom'].' <br/>
 		Lieu : '.$line['Lieu'].'<br/>';
 	}
@@ -69,7 +66,7 @@
 		Vous devez etre connecté pour vous inscrire a un evenement : <a href="connexion.php">Se connecter</a>.
 	<?php } ?>
 	
-	<h1>Liste des inscrits </h1>
+	<h2>Liste des inscrits </h2>
 
 <?php
 	
