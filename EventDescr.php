@@ -70,8 +70,8 @@
 
 <?php
 	
-	$SQL_Query = 'SELECT Membre_email
-				FROM Membre_Inscrit_Event
+	$SQL_Query = 'SELECT Membre_email, Nom, Prenom
+				FROM Membre_Inscrit_Event JOIN Membre ON Membre.email = Membre_Inscrit_Event.Membre_email
 				WHERE Event_Id = '. intval($_GET['idEvent']).'
 				ORDER BY Date';
 	 
@@ -79,7 +79,7 @@
 	$query->execute(); 
 	while ($line = $query->fetch())
 	{
-		echo 'Inscrit : '.$line['Membre_email'].'<br/>';
+		echo $line['Prenom'].' '.$line['Nom'].' ('.$line['Membre_email'].')<br/>';
 	}
 ?>
 	
