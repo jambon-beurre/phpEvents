@@ -35,9 +35,6 @@
 	else{
 		header('location:inscription.php?err=1');
 	}
-?>
 
-
-<?php
 	include("End.php");
 ?>

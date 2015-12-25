@@ -15,7 +15,9 @@
 			exit();
 	}//Non connecté
 	else {
-		if (isset($_COOKIE['email']) && isset($_COOKIE['pwd']))
+		if (isset($_GET['unreg']))
+			echo "<p class = \"err\">Vous êtes désincrit du site. Nous espérons vous revoir bientôt !</p>";
+		else if (isset($_COOKIE['email']) && isset($_COOKIE['pwd']))
 			echo "<p class = \"err\">Vos identifiants de connexion sont erronés, veuillez réessayer.</p>";
 			?>
 
