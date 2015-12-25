@@ -4,7 +4,7 @@
 	if(isConnected())
 	{
 		$bdd = Connect_db();
-		$query = $bdd->prepare('SELECT email, Nom, Prenom FROM Membre');
+		$query = $bdd->prepare('SELECT * FROM Membre');
 		$query->execute(); 
 		while ($line = $query->fetch())
 		{
@@ -14,8 +14,8 @@
 				Nom : <?php echo$line['Nom'];?><br/>
 				Prenom : <?php echo$line['Prenom'];?><br/>
 				Email : <?php echo$line['email'];?><br/> <?php
+				break;
 			}
-			break;
 		}
 	?>
 			<h2>Changer de mot de passe</h2>
