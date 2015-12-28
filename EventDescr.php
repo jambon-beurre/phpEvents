@@ -28,8 +28,10 @@
 		if (file_exists('EventPics/'.$line['idEvent'].'.jpg'))
 			echo '<img class="desc" src="EventPics/'.$line['idEvent'].'.jpg"/>';
 		echo '<p>'.$line['Description'].'</p>
-		Type : '.$line['tNom'].' <br/>
-		Lieu : '.$line['Lieu'].'<br/>';
+		<p>
+		<strong>Type :</strong> '.$line['tNom'].' <br/>
+		<strong>Lieu :</strong> '.$line['Lieu'].
+		'</p>';
 	}
 	
 	//Check if the connected guy has subscribe.
@@ -70,6 +72,7 @@
 
 <?php
 	
+	$i=0;
 	$SQL_Query = 'SELECT Membre_email, Nom, Prenom
 				FROM Membre_Inscrit_Event JOIN Membre ON Membre.email = Membre_Inscrit_Event.Membre_email
 				WHERE Event_Id = '. intval($_GET['idEvent']).'
@@ -80,6 +83,10 @@
 	while ($line = $query->fetch())
 	{
 		echo $line['Prenom'].' '.$line['Nom'].' ('.$line['Membre_email'].')<br/>';
+		$i++;
+	}
+	if($i == 0){
+		echo "<p>Pas d'inscrit pour cet évènement.</p>";
 	}
 ?>
 	
