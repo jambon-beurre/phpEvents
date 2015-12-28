@@ -26,7 +26,7 @@
 	{
 		echo '<h1>'.$line['eNom'].'</h1>';
 		if (file_exists('EventPics/'.$line['idEvent'].'.jpg'))
-			echo '<img src="EventPics/'.$line['idEvent'].'.jpg"/>';
+			echo '<img class="desc" src="EventPics/'.$line['idEvent'].'.jpg"/>';
 		echo '<p>'.$line['Description'].'</p>
 		Type : '.$line['tNom'].' <br/>
 		Lieu : '.$line['Lieu'].'<br/>';

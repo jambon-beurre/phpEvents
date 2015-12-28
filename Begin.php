@@ -50,7 +50,7 @@ function isConnected(){
 <body>
 
 	<header>
-		<a href="index.php" id="accueil">Accueil</a>
+		<a href="accueil.php" id="accueil">Accueil</a>
 		<div id="header_right">
 		<?php echo (isConnected()?'<a href="profil.php">Profil</a> <a href="deconnexion.php">Déconnexion</a>':'<a href="connexion.php" class="header_right">Connexion</a>');?>
 		</div>

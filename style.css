@@ -1,8 +1,16 @@
-body, html{
+body{
 	font-family: 'Open sans', sans-serif;
-	width: 85%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: #F8F8F8;
+}
+
+html{
+	background-image: url("Images/background.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
 }
 
 header{
@@ -18,6 +26,11 @@ header a{
 	transition: 0.2s;
 	margin: 0;
 }
+
+p{
+	margin: 50px;
+}
+
 
 body{
 	text-align: center;
@@ -42,7 +55,7 @@ td a{
 }
 
 header a:hover{
-	background-color: white;
+	background-color: #F8F8F8;
 	color: black;
 }
 
@@ -53,7 +66,7 @@ header a:hover{
 
 #header_right{
 	text-align: right;
-	width: 84.7%;
+	width: 84.69%;
 	display: inline-block;
 }
 
@@ -69,4 +82,22 @@ header a:hover{
 
 input{
 	margin:10px;
+}
+
+img.desc{
+	width: 70%;
+}
+
+footer{
+	padding-bottom: 40px;
+}
+
+#accueilHTML{
+	background:none;
+}
+
+#acces{
+	margin-top: 100px;
+	border-radius: 5%;
+	width:300px;
 }
