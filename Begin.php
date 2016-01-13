@@ -44,14 +44,11 @@ function isConnected(){
 	<title>php Events</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
-
 <body>
-
-	<header>
-		<a href="accueil.php" id="accueil">Accueil</a>
-		<div id="header_right">
-		<?php echo (isConnected()?'<a href="profil.php">Profil</a> <a href="deconnexion.php">Déconnexion</a>':'<a href="connexion.php" class="header_right">Connexion</a>');?>
-		</div>
+	<header>	
+		<a href="accueil.php">Accueil</a>
+		<?php echo (isConnected()?'<a href="profil.php">Profil</a> <a href="deconnexion.php">Déconnexion</a>':'<a href="connexion.php">Connexion</a>');?>
+		
 	</header>
+	
